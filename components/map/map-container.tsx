@@ -1,33 +1,19 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { MouseEvent, useEffect, useState } from "react";
+import supabase from "@/lib/supabase";
+import { Warehouse } from "@/lib/types";
+
 import MapContainerFrontView from "./map-container-front-view";
 import MapContainerBackView from "./map-container-back-view";
 import MapViewSwitch from "./map-view-switch";
 import MapContainerFrontViewHitBoxes from "./map-container-front-view-hitboxes";
 import MapContainerBackViewHitBoxes from "./map-container-back-view-hitboxes";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { Warehouse } from "@/lib/types";
 import MapWarehouseTooltip from "./map-warehouse-tooltip";
 
 const MapContainer = () => {
-  const supabase = createClientComponentClient();
-
   const [warehouses, setWarehouses] = useState<Warehouse[]>([]);
-
-  useEffect(() => {
-    const getWarehouses = async () => {
-      const { data, error } = await supabase.from("warehouses").select("*");
-
-      if (data) {
-        setWarehouses(data);
-      }
-    };
-
-    getWarehouses();
-  }, [supabase]);
-
   const [isMounted, setIsMounted] = useState(false);
   const [viewType, setViewType] = useState<"front" | "back">("front");
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
@@ -38,26 +24,26 @@ const MapContainer = () => {
   >(undefined);
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    const getWarehouses = async () => {
+      const { data, error } = await supabase.from("warehouses").select("*");
+      if (data) {
+        setWarehouses(data);
+      }
+    };
 
-  if (!isMounted) {
-    return null;
-  }
+    getWarehouses();
+  }, []);
 
   const showToolTip = (e: any) => {
     const selectedWarehouse = warehouses?.find(
       (warehouse) => warehouse.warehouse === e.target.getAttribute("data-id")
     );
-
     setSelectedWarehouse(selectedWarehouse);
-
     if (selectedWarehouse?.availability === true) {
       e.target.classList.add("available");
     } else {
       e.target.classList.add("unavailable");
     }
-
     if (viewType === "front") {
       setToolTipTop(selectedWarehouse?.frontTop);
       setToolTipLeft(selectedWarehouse?.frontLeft);

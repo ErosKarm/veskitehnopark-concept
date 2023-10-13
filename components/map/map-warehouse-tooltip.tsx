@@ -26,8 +26,6 @@ const MapWarehouseTooltip = ({
 
   const router = useRouter();
 
-  console.log(left, top);
-
   return (
     <div
       style={{ top: `calc(${top}% - 245px)`, left: `calc(${left}% - 8px)` }}
@@ -103,7 +101,7 @@ const MapWarehouseTooltip = ({
       </div>
 
       <Link
-        href={`/${warehouse?.warehouse}`}
+        href={`/ladu/${warehouse?.warehouse}`}
         className="flex gap-x-1 items-center text-xs bg-slate-900 p-[8px] rounded mt-auto justify-center align-center"
       >
         Broneeri nutiladu <ArrowRight className="h-3 w-3" />

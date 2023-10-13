@@ -10,4 +10,8 @@ export type Warehouse = {
   frontLeft: number;
   backTop: number;
   backLeft: number;
+  warehouseWidth: number;
+  warehouseHeight: number;
+  warehouseLength: number;
+  warehouseCapacity: number;
 };

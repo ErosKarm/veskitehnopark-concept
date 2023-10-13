@@ -19,7 +19,7 @@ const MapHitbox = ({ left, top, available }: MapHitboxProps) => {
         <div
           className={cn(
             "w-2 h-2 bg-red-600 rounded-full",
-            available === true ? "bg-green-500" : "bg-red-500"
+            available === true ? "bg-green-600" : "bg-red-600"
           )}
         ></div>
       </div>
