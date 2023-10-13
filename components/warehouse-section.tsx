@@ -156,7 +156,7 @@ const WarehouseSection = ({ selectedWarehouse }: WarehouseSectionProps) => {
           alt="Veskitehnopark warehouse image"
           className="object-contain scale-100"
         />
-        <div className="absolute  h-[80px] flex items-center justify-center w-[70px] top-[25%] right-[210px] text-7xl font-bold skew-y-[28deg]">
+        <div className="absolute  h-[80px] flex items-center justify-center w-[70px] top-[25%] right-[210px] text-7xl font-bold skew-y-[30deg] skew-x-[-0deg]">
           {selectedWarehouse[0].warehouse}
         </div>
       </div>
