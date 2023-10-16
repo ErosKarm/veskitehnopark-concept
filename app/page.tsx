@@ -6,6 +6,12 @@ export default function Home() {
     <main>
       <Hero />
       <MapContainer />
+
+      <section>
+        <div>
+          <span>30</span>
+        </div>
+      </section>
     </main>
   );
 }

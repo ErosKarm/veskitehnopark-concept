@@ -63,71 +63,73 @@ const MapContainer = () => {
   };
 
   return (
-    <div className="testing relative overflow-hidden transform scale-95">
-      {viewType === "front" ? (
-        <Image
-          src={"/veski-frontview.webp"}
-          alt="veski front"
-          width={1920}
-          height={1080}
-        />
-      ) : (
-        <Image
-          src={"/veski-backview.webp"}
-          alt="veski front"
-          width={1920}
-          height={1080}
-        />
-      )}
-
-      <MapWarehouseTooltip
-        warehouse={selectedWarehouse ? selectedWarehouse : undefined}
-        visible={isTooltipVisible}
-        setVisible={setIsTooltipVisible}
-        top={toolTipTop ? toolTipTop : undefined}
-        left={toolTipLeft ? toolTipLeft : undefined}
-      />
-      <MapViewSwitch setViewType={setViewType} viewType={viewType} />
-
-      <svg
-        viewBox="0 0 1920 1080"
-        className="svg z-10 absolute top-0 border-box"
-        width={1080}
-        height={1920}
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio=""
-      >
+    <section>
+      <div className="testing relative overflow-hidden transform scale-95">
         {viewType === "front" ? (
-          <>
-            <MapContainerFrontView
-              warehouses={warehouses}
-              showToolTip={showToolTip}
-              onMouseLeave={onMouseLeave}
-            />
-          </>
+          <Image
+            src={"/veski-frontview.webp"}
+            alt="veski front"
+            width={1920}
+            height={1080}
+          />
         ) : (
-          <>
-            <MapContainerBackView
-              showToolTip={showToolTip}
-              onMouseLeave={onMouseLeave}
-            />
-          </>
+          <Image
+            src={"/veski-backview.webp"}
+            alt="veski front"
+            width={1920}
+            height={1080}
+          />
         )}
-      </svg>
 
-      {viewType === "front" ? (
-        <MapContainerFrontViewHitBoxes warehouses={warehouses} />
-      ) : (
-        <MapContainerBackViewHitBoxes warehouses={warehouses} />
-      )}
+        <MapWarehouseTooltip
+          warehouse={selectedWarehouse ? selectedWarehouse : undefined}
+          visible={isTooltipVisible}
+          setVisible={setIsTooltipVisible}
+          top={toolTipTop ? toolTipTop : undefined}
+          left={toolTipLeft ? toolTipLeft : undefined}
+        />
+        <MapViewSwitch setViewType={setViewType} viewType={viewType} />
 
-      <div
-        style={{ left: "calc(50% - 300px)" }}
-        className="absolute flex items-center justify-center text-white bottom-4  w-[600px] h-[100px]"
-      >
-        <span className="text-3xl font-semibold">Vali endale sobiv ladu</span>
+        <svg
+          viewBox="0 0 1920 1080"
+          className="svg z-10 absolute top-0 border-box"
+          width={1080}
+          height={1920}
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio=""
+        >
+          {viewType === "front" ? (
+            <>
+              <MapContainerFrontView
+                warehouses={warehouses}
+                showToolTip={showToolTip}
+                onMouseLeave={onMouseLeave}
+              />
+            </>
+          ) : (
+            <>
+              <MapContainerBackView
+                showToolTip={showToolTip}
+                onMouseLeave={onMouseLeave}
+              />
+            </>
+          )}
+        </svg>
+
+        {viewType === "front" ? (
+          <MapContainerFrontViewHitBoxes warehouses={warehouses} />
+        ) : (
+          <MapContainerBackViewHitBoxes warehouses={warehouses} />
+        )}
+
+        <div
+          style={{ left: "calc(50% - 300px)" }}
+          className="absolute flex items-center justify-center text-white bottom-4  w-[600px] h-[100px]"
+        >
+          <span className="text-3xl font-semibold">Vali endale sobiv ladu</span>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -33,8 +33,8 @@ const WarehouseSectionInfoContainer = ({
           className={cn(
             "h-3 w-3  rounded-full",
             selectedWarehouse[0].availability === true
-              ? "bg-emerald-600"
-              : "bg-red-600"
+              ? "bg-emerald-500"
+              : "bg-red-500"
           )}
         ></div>
       </div>

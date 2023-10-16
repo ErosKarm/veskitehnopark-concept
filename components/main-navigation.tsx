@@ -30,8 +30,8 @@ const MainNavigation = () => {
   ];
 
   return (
-    <nav className="h-[85px]  flex items-center">
-      <div className="w-full ml-24 flex justify-between items-center mx-auto h-[85px] ">
+    <nav className="h-[55px]  flex items-center">
+      <div className="w-full ml-24 flex justify-between items-center mx-auto h-[85px]">
         <Image
           src={"/logo.webp"}
           width={200}
@@ -46,7 +46,7 @@ const MainNavigation = () => {
             <Link
               href={route.href}
               key={route.href}
-              className="text-sm w-[200px] h-full flex items-center justify-center border-l border-b border-slate-100 hover:bg-blue-700 hover:text-white transition-all"
+              className="w-[200px] text-xs h-full flex items-center justify-center hover:bg-blue-700 hover:text-white transition-all"
             >
               {route.label}
             </Link>
