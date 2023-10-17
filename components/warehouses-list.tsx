@@ -10,12 +10,9 @@ const WarehousesList = async () => {
     .select("*");
 
   return (
-    <div className="w-[1100px] mx-auto mt-12">
-      <h2 className="text-3xl font-semibold">Ladude saadavus:</h2>
-      <Separator className="mt-2 mb-8" />
-
-      <div className="grid grid-cols-3 gap-x-8">
-        <div className="col-span-2">
+    <div className="w-[1300px] mx-auto pb-16">
+      <div className="grid grid-cols-3 gap-x-8 ">
+        <div className="col-span-2 bg-white pt-12 px-12">
           <DataTable columns={columns} data={warehouses ? warehouses : []} />
         </div>
 

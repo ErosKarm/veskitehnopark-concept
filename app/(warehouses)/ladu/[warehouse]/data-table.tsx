@@ -21,6 +21,10 @@ import {
 } from "@/components/ui/table";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
+import { useParams, useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -33,6 +37,9 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+
+  const parmas = useParams();
+  const router = useRouter();
 
   const table = useReactTable({
     data,
@@ -50,7 +57,11 @@ export function DataTable<TData, TValue>({
 
   return (
     <>
-      <div className="flex items-end mb-4">
+      <div className="grid grid-cols-2 items-center mb-4">
+        <div>
+          <Image src={"/logo.webp"} width={220} height={220} alt="veski logo" />
+        </div>
+
         <Input
           placeholder="Otsi ladu..."
           value={
@@ -59,10 +70,10 @@ export function DataTable<TData, TValue>({
           onChange={(event) =>
             table.getColumn("warehouse")?.setFilterValue(event.target.value)
           }
-          className="w-[200px] text-xs p-2 h-9 ml-auto"
+          className="w-[200px] text-xs p-2 h-9 ml-auto col-span-1"
         />
       </div>
-      <div className="rounded-md border">
+      <div className="rounded-md ">
         <Table className="text-xs">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -88,9 +99,21 @@ export function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
+                  onClick={() => {
+                    router.push(`/ladu/${row.getValue("warehouse")}`);
+                  }}
+                  className="cursor-pointer"
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell
+                      key={cell.id}
+                      className={cn(
+                        "",
+                        row.getValue("warehouse") === parmas.warehouse
+                          ? "bg-slate-500/10"
+                          : ""
+                      )}
+                    >
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

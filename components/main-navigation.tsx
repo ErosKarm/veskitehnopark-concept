@@ -31,7 +31,7 @@ const MainNavigation = () => {
 
   return (
     <nav className="h-[55px]  flex items-center">
-      <div className="w-full ml-24 flex justify-between items-center mx-auto h-[85px]">
+      <div className="w-full ml-24 flex justify-between items-center mx-auto h-full">
         <Image
           src={"/logo.webp"}
           width={200}

@@ -18,7 +18,7 @@ interface WarehouseSectionProps {
 const WarehouseSection = ({ selectedWarehouse }: WarehouseSectionProps) => {
   return (
     <>
-      <div className="grid grid-cols-10 gap-x-10 w-[1300px] mx-auto pt-12 ">
+      <div className="grid grid-cols-10 gap-x-10 w-[1200px] mx-auto pt-10 ">
         <WarehouseSectionInfoContainer selectedWarehouse={selectedWarehouse} />
 
         <div className="col-span-6 h-full w-[100%] mx-auto flex justify-center align-center relative">
@@ -60,7 +60,7 @@ const WarehouseSection = ({ selectedWarehouse }: WarehouseSectionProps) => {
             {selectedWarehouse[0].warehouse}
           </div>
         </div>
-        <div className="col-span-2">
+        <div className="flex  flex-col col-span-2 z-20">
           <WarehouseSwitchInput selectedWarehouse={selectedWarehouse} />
 
           <span className="mt-6 flex mb-2 text-xs">Vali lisavarustus:</span>
@@ -90,11 +90,20 @@ const WarehouseSection = ({ selectedWarehouse }: WarehouseSectionProps) => {
               Allkirjasta rendileping
             </Button>
           </div>
+          <div className="flex flex-col items-end justify-center align-end mt-auto">
+            <Image
+              src={"/logo.webp"}
+              alt="logo"
+              width={200}
+              height={200}
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
+          </div>
         </div>
         <Separator className="col-span-10 mt-8 bg-white/20 w-[75%] mx-auto" />
-        <div className="col-span-10  w-[65%] mt-8 mx-auto">
+        <div className="col-span-10  w-[75%] mt-8 mx-auto z-20 pb-8">
           <h3 className="text-xs font-semibold">Tehnilised näitajad</h3>
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-2">
             <ul className="text-xs list-disc flex flex-col gap-1 mt-4 text-white/70">
               <li>Laoruumi haldamine läbi Veskitehnopargi mobiilirakenduse</li>
               <li>Personaalne ukseesine videovalvekaamera</li>
@@ -116,15 +125,6 @@ const WarehouseSection = ({ selectedWarehouse }: WarehouseSectionProps) => {
               <li>Tasuta internet (Ethernet pistik)</li>
               <li>Personaalne tegevuslogi Kookoni mobiilirakenduses</li>
             </ul>
-            <div className="flex flex-col items-end justify-center align-end">
-              <Image
-                src={"/logo.webp"}
-                alt="logo"
-                width={200}
-                height={200}
-                style={{ filter: "brightness(0) invert(1)" }}
-              />
-            </div>
           </div>
         </div>
       </div>
