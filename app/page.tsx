@@ -1,6 +1,7 @@
 import Hero from "@/components/hero";
-import MainNavigation from "@/components/main-navigation";
+
 import MapContainer from "@/components/map/map-container";
+import Statistics from "@/components/statistics";
 
 export default function Home() {
   return (
@@ -8,12 +9,7 @@ export default function Home() {
       <main>
         <Hero />
         <MapContainer />
-
-        <section>
-          <div>
-            <span>30</span>
-          </div>
-        </section>
+        <Statistics />
       </main>
     </>
   );

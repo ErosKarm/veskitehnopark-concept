@@ -63,7 +63,7 @@ const MapContainer = () => {
   };
 
   return (
-    <section>
+    <section className="relative">
       <div className="testing relative overflow-hidden transform scale-95">
         {viewType === "front" ? (
           <Image
@@ -129,6 +129,7 @@ const MapContainer = () => {
           <span className="text-3xl font-semibold">Vali endale sobiv ladu</span>
         </div>
       </div>
+      <div className="w-[1300px] h-[20px] mx-auto  bg-blue-700 -mt-8 rounded"></div>
     </section>
   );
 };
