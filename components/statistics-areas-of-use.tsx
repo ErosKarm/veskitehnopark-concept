@@ -28,11 +28,11 @@ const StatisticsAreasOfUse = () => {
           <Separator className="bg-white/30 mt-3" />
           <div className="bg-blue-700/40 backdrop-blur h-[90px] items-center px-4 rounded pt-3 pb-3 w-full relative text-xs mt-auto flex group-hover:scale-100 translate-y-28 group-hover:translate-y-[-10px] transition-all">
             <p className=" text-white hover:text-md transition-all ">
-              Kookon on mõnus stardipaik nii alustavale ettevõttele kui ka
-              stabiilne tegevuspaik juba väljakujunenud firmadele. Kenad puhtad
-              ruumid jätavad klientidele hea mulje ning loovad töötamiseks
-              motiveeriva ja väärika keskkonna. Lisaks ladustamisele või
-              väiketööstusele saab pinnale hõlpsasti rajada kontori ja
+              Veskitehnopark on mõnus stardipaik nii alustavale ettevõttele kui
+              ka stabiilne tegevuspaik juba väljakujunenud firmadele. Kenad
+              puhtad ruumid jätavad klientidele hea mulje ning loovad
+              töötamiseks motiveeriva ja väärika keskkonna. Lisaks ladustamisele
+              või väiketööstusele saab pinnale hõlpsasti rajada kontori ja
               nõupidamisnurga.
             </p>
           </div>
@@ -55,10 +55,10 @@ const StatisticsAreasOfUse = () => {
           <Separator className="bg-white/30 mt-3" />
           <div className="bg-blue-700/40 backdrop-blur h-[90px] flex items-center px-4 rounded pt-3 pb-3 w-full relative text-xs mt-auto group-hover:scale-100 translate-y-28 group-hover:translate-y-[-10px] transition-all">
             <p className=" text-white hover:text-md transition-all ">
-              Talveperioodil pole paremat kohta oma paadi hoidmiseks kui Kookon.
-              Siin on seda turvaline hoiustada, mugav pesta ning hooldada.
-              Hooldusmeestele saad tagada oma Kookonile ligipääsu nutiseadme
-              kaudu.
+              Talveperioodil pole paremat kohta oma paadi hoidmiseks kui
+              Veskitehnopark. Siin on seda turvaline hoiustada, mugav pesta ning
+              hooldada. Hooldusmeestele saad tagada oma Veskitehnopargile
+              ligipääsu nutiseadme kaudu.
             </p>
           </div>
         </div>
@@ -80,10 +80,10 @@ const StatisticsAreasOfUse = () => {
           <div className="bg-blue-700/40 backdrop-blur h-[90px] flex items-center px-4 rounded pt-3 pb-3 w-full relative text-xs mt-auto group-hover:scale-100 translate-y-28 group-hover:translate-y-[-10px] transition-all">
             <p className=" text-white hover:text-md transition-all ">
               Eesti kliima on seisvate haagiste või muu tööstus- ja hobitehnika
-              vastu üsnagi vaenulik. Kookon on parim koht tehnika kaitsmiseks
-              niiskuse, UV-kiirguse ja kõikuvate temperatuuride eest. Kookon
-              kaitseb tehnikat ka pahatahtliku huvi eest. Samuti sobib pind
-              hooldustööde teostamiseks.
+              vastu üsnagi vaenulik. Veskitehnopark on parim koht tehnika
+              kaitsmiseks niiskuse, UV-kiirguse ja kõikuvate temperatuuride
+              eest. Veskitehnopark kaitseb tehnikat ka pahatahtliku huvi eest.
+              Samuti sobib pind hooldustööde teostamiseks.
             </p>
           </div>
         </div>
@@ -104,9 +104,9 @@ const StatisticsAreasOfUse = () => {
           <Separator className="bg-white/30 mt-3" />
           <div className="bg-blue-700/40 backdrop-blur h-[90px] flex items-center px-4 rounded pt-3 pb-3 w-full relative text-xs mt-auto group-hover:scale-100 translate-y-28 group-hover:translate-y-[-10px] transition-all">
             <p className=" text-white hover:text-md transition-all ">
-              Kui Sinu hobiks on auto- või veesport, siis on Kookon ideaalne
-              hoiupaik oma tehnikavarustuse paigutamiseks või ka hooldustööde
-              teostamiseks.
+              Kui Sinu hobiks on auto- või veesport, siis on Veskitehnopark
+              ideaalne hoiupaik oma tehnikavarustuse paigutamiseks või ka
+              hooldustööde teostamiseks.
             </p>
           </div>
         </div>
@@ -127,10 +127,10 @@ const StatisticsAreasOfUse = () => {
           <Separator className="bg-white/30 mt-3" />
           <div className="bg-blue-700/40 backdrop-blur h-[90px] flex items-center px-4 rounded pt-3 pb-3 w-full relative text-xs mt-auto group-hover:scale-100 translate-y-28 group-hover:translate-y-[-10px] transition-all">
             <p className=" text-white hover:text-md transition-all ">
-              Kookon on hea koht, kus ladustada oma seisvat vara või kaupa. Olgu
-              selleks siis talveperioodiks turvalisemat paika vajav suvilamööbel
-              ja aiatehnika või kolimise käigus hoiustamist vajav igapäevane
-              kodune vara.
+              Veskitehnopark on hea koht, kus ladustada oma seisvat vara või
+              kaupa. Olgu selleks siis talveperioodiks turvalisemat paika vajav
+              suvilamööbel ja aiatehnika või kolimise käigus hoiustamist vajav
+              igapäevane kodune vara.
             </p>
           </div>
         </div>
@@ -152,9 +152,9 @@ const StatisticsAreasOfUse = () => {
           <div className="bg-blue-700/40 backdrop-blur h-[90px] mb flex items-center px-4 rounded pt-3 pb-3 w-full relative text-xs mt-auto group-hover:scale-100 translate-y-28 group-hover:translate-y-[-10px] transition-all">
             <p className=" text-white hover:text-md transition-all ">
               Lauatennis, jooga, jõusaal või ükskõik milline muu hobi mahub
-              Kookonisse ilusasti ära. Kujundades ruumi vastavalt oma soovidele,
-              võid siia mahutada nii lauatenniseklubi kui ka täistuuridel
-              töötava keraamikastuudio.
+              Veskitehnopargisse ilusasti ära. Kujundades ruumi vastavalt oma
+              soovidele, võid siia mahutada nii lauatenniseklubi kui ka
+              täistuuridel töötava keraamikastuudio.
             </p>
           </div>
         </div>

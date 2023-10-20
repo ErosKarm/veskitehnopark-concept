@@ -63,7 +63,7 @@ const MapContainer = () => {
   };
 
   return (
-    <section className="relative">
+    <section className="relative -mt-9">
       <div className="testing relative overflow-hidden transform scale-95">
         {viewType === "front" ? (
           <Image

@@ -14,8 +14,8 @@ const WarehousePage = async ({ params }: { params: { warehouse: string } }) => {
 
   return (
     <>
-      <div className="text-white bg-blue-700 w-full relative">
-        <div className="bg-[url('/noise.png')] w-full opacity-[3%] z-[0] absolute top-0 "></div>
+      <div className="text-white bg-blue-700 w-full relative pt-6">
+        <div className="w-full opacity-[3%] z-[0] absolute top-0"></div>
         <WarehouseSection
           selectedWarehouse={selectedWarehouse ? selectedWarehouse : []}
         />

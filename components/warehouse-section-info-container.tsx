@@ -21,7 +21,7 @@ const WarehouseSectionInfoContainer = ({
         Mine tagasi
       </Link>
 
-      <div className="bg-blue-800 flex flex-col py-2 px-4 w-[70%] rounded">
+      <div className="bg-blue-900/30 flex flex-col py-2 px-4 w-[70%] rounded">
         <span className="text-xs">Lao tähis</span>
         <span className="text-xl font-semibold">
           {selectedWarehouse[0].warehouse}
@@ -53,7 +53,7 @@ const WarehouseSectionInfoContainer = ({
         </ul>
       </div>
       <Separator className="bg-white/30 mt-4 mb-8" />
-      <div className="bg-blue-800 flex flex-col  w-full rounded">
+      <div className="bg-blue-900/30 flex flex-col  w-full rounded">
         <span className="text-[10px] text-black font-semibold translate-y-[-7px] text-center uppercase bg-white rounded mr-[20%]">
           Veskitehnopargi nutiladu
         </span>

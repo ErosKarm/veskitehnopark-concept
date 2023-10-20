@@ -8,6 +8,9 @@ export default function Home() {
     <>
       <main>
         <Hero />
+        <div className="text-center font-semibold mb-3">
+          Vali endale sobiv nutiladu
+        </div>
         <MapContainer />
         <Statistics />
       </main>

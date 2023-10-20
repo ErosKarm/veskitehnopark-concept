@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Circle, Loader2 } from "lucide-react";
+import { useState } from "react";
 
 interface MapWarehouseTooltipProps {
   visible: boolean;
@@ -23,6 +24,7 @@ const MapWarehouseTooltip = ({
   setVisible,
 }: MapWarehouseTooltipProps) => {
   const positioning = visible === true ? "absolute" : "hidden";
+  const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
@@ -101,10 +103,15 @@ const MapWarehouseTooltip = ({
       </div>
 
       <Link
+        onClick={() => setIsLoading(true)}
         href={`/ladu/${warehouse?.warehouse}`}
         className="flex gap-x-1 items-center text-xs bg-slate-900 p-[8px] rounded mt-auto justify-center align-center"
       >
-        Broneeri nutiladu <ArrowRight className="h-3 w-3" />
+        {isLoading ? (
+          <Loader2 className="h-3 w-3 animate-spin" />
+        ) : (
+          `Broneeri nutiladu`
+        )}
       </Link>
     </div>
   );

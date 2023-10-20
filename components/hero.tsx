@@ -8,7 +8,7 @@ import { CornerRightDown } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section>
+    <section className="mt-6">
       <Container className="flex flex-col w-[1700px] bg-hero-image h-[800px] relative">
         <div className="flex flex-col mt-10 gap-6">
           <h1 className="text-9xl font-[600] ml-[200px]">Mugavad ja</h1>

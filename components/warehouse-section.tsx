@@ -1,7 +1,7 @@
 "use client";
 
 import { Warehouse } from "@/lib/types";
-import { ShowerHead } from "lucide-react";
+import { Lock, ShowerHead } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -10,12 +10,41 @@ import { Button } from "./ui/button";
 import { WarehouseSwitchInput } from "./warehouse-switch-input";
 import WarehouseSectionInfoContainer from "./warehouse-section-info-container";
 import { Badge } from "./ui/badge";
+import { useState } from "react";
+import { Toggle } from "./ui/toggle";
 
 interface WarehouseSectionProps {
   selectedWarehouse: Warehouse[];
 }
 
 const WarehouseSection = ({ selectedWarehouse }: WarehouseSectionProps) => {
+  const [isWC, setIsWC] = useState(false);
+  const [isBoiler10, setIsBoiler10] = useState(false);
+  const [isBoiler50, setIsBoiler50] = useState(false);
+  const [isShower, setIsShower] = useState(false);
+
+  const calculatePrice = () => {
+    const base = selectedWarehouse[0].price;
+
+    if (isWC === true && isBoiler10 === false && isBoiler50 === false) {
+      return base + 100;
+    }
+
+    if (isBoiler10) {
+      return base + 100 + 10;
+    }
+
+    if (isBoiler50 && isShower === false) {
+      return base + 100 + 20;
+    }
+
+    if (isShower) {
+      return base + 100 + 20 + 25;
+    }
+
+    return base;
+  };
+
   return (
     <>
       <div className="grid grid-cols-10 gap-x-10 w-[1200px] mx-auto pt-10 ">
@@ -65,28 +94,82 @@ const WarehouseSection = ({ selectedWarehouse }: WarehouseSectionProps) => {
 
           <span className="mt-6 flex mb-2 text-xs">Vali lisavarustus:</span>
           <div className="flex  gap-x-2">
-            <Button size={"icon"} className="text-[9px] bg-blue-800 text-white">
+            <Button
+              disabled={isShower}
+              size={"icon"}
+              onClick={() => {
+                setIsWC(!isWC);
+                calculatePrice();
+              }}
+              className={cn(
+                "text-[9px] bg-blue-900/30  text-white hover:bg-white/70 hover:text-black",
+                isWC && "bg-white text-black hover:bg-white"
+              )}
+            >
               WC
             </Button>
-            <Button size={"icon"} className="text-[9px] bg-blue-800 text-white">
+
+            <Button
+              size={"icon"}
+              disabled={isShower}
+              onClick={() => {
+                if (isBoiler50) setIsBoiler50(false);
+                setIsBoiler10(!isBoiler10);
+                setIsWC(true);
+                calculatePrice();
+              }}
+              className={cn(
+                "text-[9px] bg-blue-900/30  text-white hover:bg-white/70 hover:text-black relative",
+                isBoiler10 && "bg-white text-black hover:bg-white"
+              )}
+            >
+              Boiler <br /> 10L
+              {isShower && (
+                <Lock className="absolute w-3 h-3  top-[-3px] right-0 bg-black p-[2px] text-white" />
+              )}
+            </Button>
+
+            <Button
+              size={"icon"}
+              disabled={isShower}
+              onClick={() => {
+                if (isBoiler10) setIsBoiler10(false);
+                setIsBoiler50(!isBoiler50);
+                setIsWC(true);
+                calculatePrice();
+              }}
+              className={cn(
+                "text-[9px] bg-blue-900/30  text-white hover:bg-white/70 hover:text-black",
+                isBoiler50 && "bg-white text-black hover:bg-white"
+              )}
+            >
               Boiler <br /> 50L
             </Button>
-            <Button size={"icon"} className="text-[9px] bg-blue-800 text-white">
-              Boiler <br /> 10L
-            </Button>
-            <Button size={"icon"} className="bg-blue-800 text-white">
+
+            <Button
+              size={"icon"}
+              onClick={() => {
+                setIsShower(!isShower);
+                setIsBoiler50(true);
+                setIsWC(true);
+                setIsBoiler10(false);
+                calculatePrice();
+              }}
+              className={cn(
+                "text-[9px] bg-blue-900/30  text-white relative hover:bg-white/70 hover:text-black",
+                isShower && "bg-white text-black hover:bg-white"
+              )}
+            >
               <ShowerHead className="w-4 h-4" />
             </Button>
           </div>
 
-          <div className="flex flex-col  items-center bg-blue-800 mt-8 pt-4 rounded">
+          <div className="flex flex-col  items-center bg-blue-900/30 mt-8 pt-4 rounded">
             <span className="text-sm">Kuumakse:</span>
-            <span className="text-2xl font-semibold">
-              {selectedWarehouse[0].price}€
-            </span>
+            <span className="text-2xl font-semibold">{calculatePrice()}€</span>
             <span className="text-xs text-muted-foreground">(lisandub KM)</span>
 
-            <Button className="w-full text-[10px] uppercase  bg-white text-black rounded-none mt-4">
+            <Button className="w-full text-[10px] uppercase  bg-white text-black rounded-none mt-4 hover:bg-white/70">
               Allkirjasta rendileping
             </Button>
           </div>
